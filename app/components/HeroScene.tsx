@@ -108,29 +108,31 @@ function BurstLines() {
 /* ─── Divider with lines ─── */
 function Divider({ delay = 0 }: { delay?: number }) {
   return (
-    <div className="flex items-center justify-center gap-3 sm:gap-4 w-full max-w-xs sm:max-w-md lg:max-w-xl mx-auto">
+    <div className="flex items-center justify-center gap-4 w-full">
       <motion.div
         initial={{ scaleX: 0, opacity: 0 }}
         animate={{ scaleX: 1, opacity: 1 }}
-        transition={{ duration: 1, delay, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 1.2, delay, ease: [0.22, 1, 0.36, 1] }}
         style={{
           height: "1px",
           flex: 1,
           transformOrigin: "right",
-          background: "linear-gradient(to left, rgba(77,200,232,0.6), transparent)",
+          background: "linear-gradient(to left, rgba(77,200,232,0.7), transparent)",
         }}
       />
       <motion.span
-        initial={{ opacity: 0, letterSpacing: "0.05em" }}
-        animate={{ opacity: 1, letterSpacing: "0.3em" }}
-        transition={{ duration: 1.2, delay: delay + 0.1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: delay + 0.3 }}
         style={{
           fontFamily: "'Montserrat', sans-serif",
-          fontSize: "clamp(0.45rem, 1.2vw, 0.6rem)",
+          fontSize: "clamp(0.45rem, 1vw, 0.58rem)",
           fontWeight: 600,
           color: "rgba(77,200,232,0.85)",
           textTransform: "uppercase",
+          letterSpacing: "0.3em",
           whiteSpace: "nowrap",
+          flexShrink: 0,
         }}
       >
         The New Portfolio is Taking Shape
@@ -138,12 +140,12 @@ function Divider({ delay = 0 }: { delay?: number }) {
       <motion.div
         initial={{ scaleX: 0, opacity: 0 }}
         animate={{ scaleX: 1, opacity: 1 }}
-        transition={{ duration: 1, delay, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 1.2, delay, ease: [0.22, 1, 0.36, 1] }}
         style={{
           height: "1px",
           flex: 1,
           transformOrigin: "left",
-          background: "linear-gradient(to right, rgba(77,200,232,0.6), transparent)",
+          background: "linear-gradient(to right, rgba(77,200,232,0.7), transparent)",
         }}
       />
     </div>
@@ -250,9 +252,8 @@ export default function HeroScene() {
           </span>
         </RevealText>
 
-        {/* Gap after script */}
-        <div className="mt-7 sm:mt-9 lg:mt-11 w-full">
-          {/* Tagline divider */}
+        {/* Gap after script → divider */}
+        <div className="mt-10 sm:mt-12 lg:mt-14 w-full">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -262,11 +263,11 @@ export default function HeroScene() {
           </motion.div>
         </div>
 
-        {/* Gap after divider */}
-        <div className="mt-7 sm:mt-9 lg:mt-11 w-full flex flex-col items-center">
+        {/* Gap after divider → body */}
+        <div className="mt-10 sm:mt-12 lg:mt-14 w-full flex flex-col items-center">
           {/* Body copy */}
           <motion.div
-            className="flex flex-col items-center gap-3 sm:gap-4 lg:gap-5 w-full max-w-[90vw] sm:max-w-md lg:max-w-lg"
+            className="flex flex-col items-center gap-5 sm:gap-6 lg:gap-7 w-full max-w-[90vw] sm:max-w-md lg:max-w-lg"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.8, ease: [0.22, 1, 0.36, 1] }}
@@ -328,7 +329,7 @@ export default function HeroScene() {
 
           {/* Social icons */}
           <motion.div
-            className="mt-8 sm:mt-10 lg:mt-12"
+            className="mt-10 sm:mt-12 lg:mt-14"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 2.1, ease: [0.22, 1, 0.36, 1] }}
