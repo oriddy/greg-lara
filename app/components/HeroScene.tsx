@@ -193,7 +193,7 @@ export default function HeroScene() {
 
         {/* Logo block */}
         <motion.div
-          className="flex items-center justify-center gap-2 sm:gap-4 lg:gap-6 mb-2 sm:mb-3 lg:mb-4"
+          className="flex items-center justify-center gap-2 sm:gap-4 lg:gap-6 mb-6 sm:mb-8 lg:mb-10"
           style={{ rotateX, rotateY }}
         >
           <motion.span
@@ -253,7 +253,7 @@ export default function HeroScene() {
         </RevealText>
 
         {/* Gap after script → divider */}
-        <div className="mt-10 sm:mt-12 lg:mt-14 w-full">
+        <div className="mt-16 sm:mt-20 lg:mt-24 w-full">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -264,10 +264,10 @@ export default function HeroScene() {
         </div>
 
         {/* Gap after divider → body */}
-        <div className="mt-10 sm:mt-12 lg:mt-14 w-full flex flex-col items-center">
+        <div className="mt-14 sm:mt-16 lg:mt-20 w-full flex flex-col items-center">
           {/* Body copy */}
           <motion.div
-            className="flex flex-col items-center gap-5 sm:gap-6 lg:gap-7 w-full max-w-[90vw] sm:max-w-md lg:max-w-lg"
+            className="flex flex-col items-center gap-6 sm:gap-7 lg:gap-8 w-full max-w-[90vw] sm:max-w-md lg:max-w-lg"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.8, ease: [0.22, 1, 0.36, 1] }}
@@ -327,13 +327,21 @@ export default function HeroScene() {
             </p>
           </motion.div>
 
-          {/* Social icons */}
+          {/* Separator + Social icons */}
           <motion.div
-            className="mt-10 sm:mt-12 lg:mt-14"
+            className="mt-16 sm:mt-20 lg:mt-24 w-full flex flex-col items-center gap-8 sm:gap-10"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 2.1, ease: [0.22, 1, 0.36, 1] }}
           >
+            {/* Thin separator line */}
+            <div
+              style={{
+                width: "3rem",
+                height: "1px",
+                background: "rgba(77,200,232,0.35)",
+              }}
+            />
             <SocialIcons delay={2.2} />
           </motion.div>
         </div>
